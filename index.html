@@ -364,6 +364,34 @@
       .hero-grid { gap: 32px; }
       .hero-card { max-width: none; }
     }
+
+    /* v15: 初期レイアウトのhero画像を左カラム内へ復元 */
+    .hero .hero-visual-wrap {
+      margin-top: 28px;
+      aspect-ratio: auto;
+      height: auto;
+      max-width: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #eef2f4;
+      border: 1px solid #dfe5e8;
+    }
+    .hero .hero-visual {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 360px;
+      object-fit: contain;
+      object-position: center;
+    }
+    @media (max-width: 600px) {
+      .hero .hero-visual-wrap {
+        margin-top: 24px;
+      }
+      .hero .hero-visual {
+        max-height: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -374,6 +402,9 @@
           <div class="eyebrow">Design × Improvement × AI</div>
           <h1><span class="hero-line">設計28年の経験から、</span><span class="hero-line"><span>考える時間</span>を取り戻す。</span></h1>
           <p class="hero-lead">設計者が「考える仕事」に集中できる環境を。設計現場で使える業務効率化・手戻り防止・設計改善・AI活用の考え方を発信しています。</p>
+          <div class="hero-visual-wrap">
+            <img class="hero-visual" src="assets/hero-design.png" alt="設計者がCAD画面を確認する設計現場" />
+          </div>
           <div class="hero-meta">
             <span class="pill">樹脂成形部品設計28年</span>
             <span class="pill">150部品以上</span>
