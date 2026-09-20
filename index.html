@@ -281,6 +281,66 @@
       .button { font-size: .96rem; padding: 14px 22px; }
       .footer-inner { flex-direction: column; }
     }
+    /* v11: ファーストビューの2カラム配置を安定化（他セクションには影響させない） */
+    .hero-grid {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+      gap: 52px;
+      align-items: start;
+    }
+    .hero-copy { min-width: 0; }
+    .hero h1 .hero-line {
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+    .hero-side {
+      min-width: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .hero-visual-wrap {
+      width: 100%;
+      max-width: 100%;
+      aspect-ratio: 4 / 3;
+    }
+    .hero-visual {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 100% center;
+    }
+
+    @media (min-width: 901px) {
+      .hero h1 { font-size: clamp(2.6rem, 4.2vw, 4.1rem); }
+      .hero { min-height: 760px; }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: minmax(0, 1fr); }
+      .hero h1 .hero-line { white-space: normal; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+      }
+      .hero-copy,
+      .hero-side {
+        display: contents;
+      }
+      .hero .eyebrow { order: 1; }
+      .hero h1 { order: 2; }
+      .hero-lead { order: 3; }
+      .hero-meta { order: 4; }
+      .hero-visual-wrap { order: 5; }
+      .hero-card { order: 6; }
+      .actions { order: 7; }
+      .hero-visual-wrap { aspect-ratio: 4 / 3; width: 100%; }
+      .hero-card { width: 100%; max-width: none; }
+    }
   </style>
 </head>
 <body>
