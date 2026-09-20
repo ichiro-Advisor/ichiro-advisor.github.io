@@ -56,8 +56,8 @@
     .muted { color: var(--ink-soft); }
 
     .site-header {
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(248,250,251,.94);
+      position: relative; z-index: 2;
+      background: rgba(248,250,251,.98);
       border-bottom: 1px solid rgba(220,229,233,.9);
       backdrop-filter: blur(12px);
     }
@@ -84,6 +84,8 @@
     .hero .eyebrow { color: var(--blue); }
     .hero h1 { max-width: 780px; margin-bottom: 25px; }
     .hero h1 span { color: #d9b77e; }
+    .hero h1 .hero-line { display: block; color: var(--ink); white-space: nowrap; }
+    .hero h1 .hero-line > span { color: #b18a4a; }
     .hero-lead { font-size: 1.1rem; color: var(--ink-soft); max-width: 660px; }
     .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 35px; }
     .pill { border: 1px solid #d7c39e; padding: 7px 13px; border-radius: 999px; font-size: .78rem; color: var(--blue-deep); background: #fffdf8; }
@@ -211,13 +213,23 @@
         gap: 30px;
         align-items: stretch;
       }
+      .hero-grid > div:first-child { display: contents; }
+      .hero .eyebrow { order: 1; }
+      .hero h1 { order: 2; }
+      .hero-lead { order: 3; }
+      .hero-card { order: 4; }
+      .hero .actions { order: 5; }
+      .hero-meta { order: 6; }
       .hero-grid > div:first-child,
       .hero-card {
         width: 100%;
         min-width: 0;
       }
+      .site-header { margin-top: 0; }
+      .nav { flex-wrap: wrap; justify-content: center; padding: 12px 0; }
+      .brand { width: 100%; text-align: center; }
       .hero h1 {
-        font-size: clamp(2.35rem, 10.5vw, 3.2rem);
+        font-size: clamp(1.95rem, 8.7vw, 2.8rem);
         line-height: 1.42;
         letter-spacing: -.05em;
         margin-bottom: 25px;
@@ -259,25 +271,12 @@
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top">いちろー<span>｜設計業務効率化</span></a>
-      <nav class="nav-links" aria-label="メインナビゲーション">
-        <a href="#profile">プロフィール</a>
-        <a href="#themes">発信テーマ</a>
-        <a href="#ai">AI実験</a>
-        <a href="#note">note</a>
-        <a href="#x">X</a>
-      </nav>
-    </div>
-  </header>
-
   <main id="top">
     <section class="hero">
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Design × Improvement × AI</div>
-          <h1>設計28年の経験から、<br><span>考える時間</span>を取り戻す。</h1>
+          <h1><span class="hero-line">設計28年の経験から、</span><span class="hero-line"><span>考える時間</span>を取り戻す。</span></h1>
           <p class="hero-lead">設計者が「考える仕事」に集中できる環境を。設計現場で使える業務効率化・手戻り防止・設計改善・AI活用の考え方を発信しています。</p>
           <div class="hero-meta">
             <span class="pill">樹脂成形部品設計28年</span>
@@ -301,6 +300,19 @@
         </aside>
       </div>
     </section>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">いちろー<span>｜設計業務効率化</span></a>
+      <nav class="nav-links" aria-label="メインナビゲーション">
+        <a href="#profile">プロフィール</a>
+        <a href="#themes">発信テーマ</a>
+        <a href="#ai">AI実験</a>
+        <a href="#note">note</a>
+        <a href="#x">X</a>
+      </nav>
+    </div>
+  </header>
 
     <section class="section" id="profile">
       <div class="container intro-grid">
