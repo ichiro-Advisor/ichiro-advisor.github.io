@@ -212,6 +212,25 @@
     .note-card .note-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
     .image-placeholder { display: grid; place-items: center; min-height: 150px; padding: 20px; color: var(--ink-soft); background: #f0f3f5; border: 1px dashed #b9cbd4; font-size: .86rem; text-align: center; }
 
+
+    /* v17: experience section uses the newly supplied portrait image */
+    /* v16: experience section only — text left, image right */
+    .experience-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: center;
+    }
+    .experience-copy { order: 1; min-width: 0; }
+    .experience-media { order: 2; min-width: 0; }
+    .experience-image {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+    }
+    @media (max-width: 900px) {
+      .experience-copy { order: 1; }
+      .experience-media { order: 2; }
+    }
     @media (max-width: 900px) {
       .hero-grid, .intro-grid, .experience-grid, .ai-grid { grid-template-columns: 1fr; gap: 40px; }
       .theme-grid { grid-template-columns: repeat(2, 1fr); }
@@ -495,7 +514,7 @@
     <section class="section experience" id="experience">
       <div class="container experience-grid">
         <div class="experience-media">
-          <img class="experience-image" src="assets/hero-design.png" alt="CAD画面と設計現場" />
+          <img class="experience-image" src="assets/experience-design.png" alt="設計現場でCAD画面と図面を確認する設計者" />
         </div>
         <div class="experience-copy">
           <div class="eyebrow">28 years of practice</div>
