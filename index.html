@@ -192,6 +192,21 @@
     footer { padding: 28px 0; background: var(--blue-deep); color: #cbdde5; font-size: .8rem; }
     .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
 
+    /* Existing image assets */
+    .hero-visual-wrap { margin-top: 28px; border-radius: 22px; overflow: hidden; background: #eef2f4; border: 1px solid #dfe5e8; }
+    .hero-visual { width: 100%; height: 250px; object-fit: cover; object-position: right center; }
+    .profile-image { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px; border: 1px solid var(--line); background: white; }
+    .profile-visual { display: flex; flex-direction: column; gap: 18px; }
+    .experience-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 18px; border: 1px solid var(--line); margin-bottom: 24px; }
+    .experiment-card { padding: 0; overflow: hidden; }
+    .experiment-card .experiment-image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: #eef2f4; }
+    .experiment-card .experiment-body { padding: 20px; }
+    .experiment-card .placeholder { width: 42px; height: 42px; border-radius: 12px; background: #d8e7ed; display: grid; place-items: center; color: var(--blue); font-weight: 800; }
+    .note-card { padding: 0; overflow: hidden; }
+    .note-card .note-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #eef2f4; }
+    .note-card .note-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
+    .image-placeholder { display: grid; place-items: center; min-height: 150px; padding: 20px; color: var(--ink-soft); background: #f0f3f5; border: 1px dashed #b9cbd4; font-size: .86rem; text-align: center; }
+
     @media (max-width: 900px) {
       .hero-grid, .intro-grid, .experience-grid, .ai-grid { grid-template-columns: 1fr; gap: 40px; }
       .theme-grid { grid-template-columns: repeat(2, 1fr); }
@@ -278,6 +293,7 @@
           <div class="eyebrow">Design × Improvement × AI</div>
           <h1><span class="hero-line">設計28年の経験から、</span><span class="hero-line"><span>考える時間</span>を取り戻す。</span></h1>
           <p class="hero-lead">設計者が「考える仕事」に集中できる環境を。設計現場で使える業務効率化・手戻り防止・設計改善・AI活用の考え方を発信しています。</p>
+          <div class="hero-visual-wrap"><img class="hero-visual" src="assets/hero-design.png" alt="設計者がCAD画面を確認する設計現場" /></div>
           <div class="hero-meta">
             <span class="pill">樹脂成形部品設計28年</span>
             <span class="pill">150部品以上</span>
@@ -316,12 +332,13 @@
 
     <section class="section" id="profile">
       <div class="container intro-grid">
-        <div>
+        <div class="profile-visual">
+          <img class="profile-image" src="assets/profile.png" alt="いちろーの人物イラスト" />
+        </div>
+        <div class="body-copy">
           <div class="eyebrow">Profile</div>
           <h2>設計28年。<br>現場で考え続けてきました。</h2>
           <div class="quote">作業を早くするだけではなく、設計者が考える時間をどう増やすか。</div>
-        </div>
-        <div class="body-copy">
           <p>樹脂成形部品の設計に携わり、これまで150点以上の部品設計を経験してきました。</p>
           <p>設計では、CADで形状を作るだけではありません。確認する。調べる。比較する。説明する。手戻りを防ぐ。そうした仕事にも、多くの時間を使います。</p>
           <p>だからこそ、単に作業を早く終わらせるのではなく、<span class="emphasis">設計者が考える時間を増やすこと</span>を意識してきました。</p>
@@ -365,6 +382,7 @@
     <section class="section experience" id="experience">
       <div class="container experience-grid">
         <div>
+          <img class="experience-image" src="assets/hero-design.png" alt="CAD画面と設計現場" />
           <div class="eyebrow">28 years of practice</div>
           <h2>28年の実務経験から発信しています</h2>
           <p class="muted">設計・製造・品質・レビュー・改善。設計を取り巻く実務の中で考えてきたことを、次の設計者が使える形にして届けます。</p>
@@ -403,19 +421,19 @@
         </div>
         <div class="experiment-grid">
           <article class="experiment-card">
-            <div class="placeholder">01</div>
-            <p>AIに過去トラブルを読ませてみた</p>
+            <img class="experiment-image" src="assets/ai-trouble-search.png" alt="AIに過去トラブルを読ませてみた実験画像" />
+            <div class="experiment-body"><div class="placeholder">01</div><p>AIに過去トラブルを読ませてみた</p></div>
           </article>
           <article class="experiment-card">
-            <div class="placeholder">02</div>
-            <p>AIに図面の注記をチェックさせてみた</p>
+            <img class="experiment-image" src="assets/ai-trouble-read.png" alt="AIに過去トラブルを読ませてみた実験画像" />
+            <div class="experiment-body"><div class="placeholder">02</div><p>AIに図面の注記をチェックさせてみた</p></div>
           </article>
           <article class="experiment-card">
-            <div class="placeholder">03</div>
-            <p>AIに打合せ議事録を整理させてみた</p>
+            <div class="image-placeholder">3枚目の既存AI実験画像をここに配置できます</div>
+            <div class="experiment-body"><div class="placeholder">03</div><p>AIに打合せ議事録を整理させてみた</p></div>
           </article>
         </div>
-        <p class="muted" style="margin-top:18px;font-size:.82rem;">※ AI実験画像は後から追加・差し替えできる構造です。</p>
+        <p class="muted" style="margin-top:18px;font-size:.82rem;">※ 既存のAI実験画像を配置する構造です。3枚目は画像追加後に差し替えできます。</p>
       </div>
     </section>
 
@@ -431,40 +449,52 @@
         </div>
         <div class="note-grid">
           <article class="note-card">
-            <div class="tag">FREE ARTICLE</div>
+            <div class="image-placeholder">見出し画像を設定できます</div>
+            <div class="note-body"><div class="tag">FREE ARTICLE</div>
             <h3>経験を積むほど、標準形状から外れなくなった</h3>
             <p>経験によって増えていく判断の基準と、設計の考え方。</p>
             <a class="card-link" href="https://note.com/ichiro_advisor" target="_blank" rel="noopener">記事を読む →</a>
+            </div>
           </article>
           <article class="note-card">
-            <div class="tag">FREE ARTICLE</div>
+            <div class="image-placeholder">見出し画像を設定できます</div>
+            <div class="note-body"><div class="tag">FREE ARTICLE</div>
             <h3>図面を渡しただけでは、設計は引き継げない</h3>
             <p>図面だけでは伝わりにくい、設計判断や背景の残し方。</p>
             <a class="card-link" href="https://note.com/ichiro_advisor" target="_blank" rel="noopener">記事を読む →</a>
+            </div>
           </article>
           <article class="note-card">
-            <div class="tag">FREE ARTICLE</div>
+            <div class="image-placeholder">見出し画像を設定できます</div>
+            <div class="note-body"><div class="tag">FREE ARTICLE</div>
             <h3>業務効率化とは「作業を早く終わらせること」ではない</h3>
             <p>作業時間の短縮だけではない、考える時間を増やす視点。</p>
             <a class="card-link" href="https://note.com/ichiro_advisor" target="_blank" rel="noopener">記事を読む →</a>
+            </div>
           </article>
           <article class="note-card">
-            <div class="tag">PAID NOTE</div>
+            <div class="image-placeholder">見出し画像を設定できます</div>
+            <div class="note-body"><div class="tag">PAID NOTE</div>
             <h3>レビューに出す前に、私が確認している5つのこと</h3>
             <p>レビュー前に確認しておきたいポイントを、実務経験から整理。</p>
             <a class="card-link" href="https://note.com/ichiro_advisor" target="_blank" rel="noopener">noteで確認 →</a>
+            </div>
           </article>
           <article class="note-card">
-            <div class="tag">PAID NOTE</div>
+            <div class="image-placeholder">見出し画像を設定できます</div>
+            <div class="note-body"><div class="tag">PAID NOTE</div>
             <h3>調べる時間を減らすために、私が残している3つの情報</h3>
             <p>後から調べ直す時間を減らすために、残しておく情報。</p>
             <a class="card-link" href="https://note.com/ichiro_advisor" target="_blank" rel="noopener">noteで確認 →</a>
+            </div>
           </article>
           <article class="note-card" style="background:var(--blue-pale);border-color:#d4e4ea;">
-            <div class="tag">MORE ARTICLES</div>
+            <div class="image-placeholder">見出し画像を設定できます</div>
+            <div class="note-body"><div class="tag">MORE ARTICLES</div>
             <h3>今後も記事を追加していきます</h3>
             <p>個別記事のURLは、公開後にこのページへ追加できます。</p>
             <a class="card-link" href="https://note.com/ichiro_advisor" target="_blank" rel="noopener">noteを開く →</a>
+            </div>
           </article>
         </div>
       </div>
