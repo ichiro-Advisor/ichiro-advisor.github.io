@@ -194,7 +194,7 @@
 
     /* Existing image assets */
     .hero-visual-wrap { margin-top: 28px; border-radius: 22px; overflow: hidden; background: #eef2f4; border: 1px solid #dfe5e8; }
-    .hero-visual { width: 100%; height: 250px; object-fit: cover; object-position: right center; }
+    .hero-visual { width: 100%; height: auto; max-height: 360px; object-fit: contain; object-position: center; }
     .profile-image { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px; border: 1px solid var(--line); background: white; }
     .profile-visual { display: flex; flex-direction: column; gap: 18px; }
     .experience-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 18px; border: 1px solid var(--line); margin-bottom: 24px; }
@@ -425,15 +425,15 @@
             <div class="experiment-body"><div class="placeholder">01</div><p>AIに過去トラブルを読ませてみた</p></div>
           </article>
           <article class="experiment-card">
-            <img class="experiment-image" src="assets/ai-trouble-read.png" alt="AIに過去トラブルを読ませてみた実験画像" />
+            <img class="experiment-image" src="assets/ai-trouble-read.png" alt="AIに図面の注記をチェックさせてみた実験画像" />
             <div class="experiment-body"><div class="placeholder">02</div><p>AIに図面の注記をチェックさせてみた</p></div>
           </article>
           <article class="experiment-card">
-            <div class="image-placeholder">3枚目の既存AI実験画像をここに配置できます</div>
+            <img class="experiment-image" src="assets/ai-meeting.png" alt="AIに打合せ議事録を整理させてみた実験画像" />
             <div class="experiment-body"><div class="placeholder">03</div><p>AIに打合せ議事録を整理させてみた</p></div>
           </article>
         </div>
-        <p class="muted" style="margin-top:18px;font-size:.82rem;">※ 既存のAI実験画像を配置する構造です。3枚目は画像追加後に差し替えできます。</p>
+        <p class="muted" style="margin-top:18px;font-size:.82rem;">※ 既存のAI実験画像を、そのまま掲載しています。</p>
       </div>
     </section>
 
