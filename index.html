@@ -200,7 +200,9 @@
     .profile-frame { width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; overflow: hidden; box-sizing: border-box; border-radius: 20px; border: 1px solid var(--line); background: white; }
     .profile-frame .profile-image { width: 100%; height: 100%; object-fit: contain; object-position: center; padding: 7%; box-sizing: border-box; border: 0; border-radius: 14px; background: transparent; display: block; }
     .profile-visual { display: flex; flex-direction: column; gap: 18px; }
-    .experience-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 18px; border: 1px solid var(--line); margin-bottom: 24px; }
+    .experience-media { min-width: 0; }
+    .experience-copy { min-width: 0; }
+    .experience-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 18px; border: 1px solid var(--line); margin-bottom: 0; display: block; }
     .experiment-card { padding: 0; overflow: hidden; }
     .experiment-card .experiment-image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: #eef2f4; }
     .experiment-card .experiment-body { padding: 20px; }
@@ -461,8 +463,10 @@
 
     <section class="section experience" id="experience">
       <div class="container experience-grid">
-        <div>
+        <div class="experience-media">
           <img class="experience-image" src="assets/hero-design.png" alt="CAD画面と設計現場" />
+        </div>
+        <div class="experience-copy">
           <div class="eyebrow">28 years of practice</div>
           <h2>28年の実務経験から発信しています</h2>
           <p class="muted">設計・製造・品質・レビュー・改善。設計を取り巻く実務の中で考えてきたことを、次の設計者が使える形にして届けます。</p>
@@ -470,17 +474,17 @@
             <div class="stat"><strong>28年</strong><span>樹脂成形部品設計</span></div>
             <div class="stat"><strong>150+</strong><span>部品設計の経験</span></div>
           </div>
-        </div>
-        <div class="experience-panel">
-          <div class="eyebrow">From experience to practice</div>
-          <h3>経験を、判断に使える形へ。</h3>
-          <p>単なる実績の紹介ではなく、実務で得た判断や気づきを、次の設計者が再利用できるように整理して発信します。</p>
-          <ul class="check-list">
-            <li>設計・製造・品質をつなげて考える</li>
-            <li>レビュー前の確認を仕組みにする</li>
-            <li>手戻りの原因を先に見つける</li>
-            <li>経験を言語化し、共有できる形にする</li>
-          </ul>
+          <div class="experience-panel">
+            <div class="eyebrow">From experience to practice</div>
+            <h3>経験を、判断に使える形へ。</h3>
+            <p>単なる実績の紹介ではなく、実務で得た判断や気づきを、次の設計者が再利用できるように整理して発信します。</p>
+            <ul class="check-list">
+              <li>設計・製造・品質をつなげて考える</li>
+              <li>レビュー前の確認を仕組みにする</li>
+              <li>手戻りの原因を先に見つける</li>
+              <li>経験を言語化し、共有できる形にする</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
