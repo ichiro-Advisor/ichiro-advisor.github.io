@@ -80,7 +80,9 @@
       width: 560px; height: 560px; border: 1px solid rgba(255,255,255,.12);
       border-radius: 50%; box-shadow: 0 0 0 36px rgba(255,255,255,.025), 0 0 0 72px rgba(255,255,255,.02);
     }
-    .hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 70px; align-items: center; position: relative; z-index: 1; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 52px; align-items: center; position: relative; z-index: 1; }
+    .hero-copy, .hero-side { min-width: 0; }
+    .hero-side { display: flex; flex-direction: column; gap: 24px; }
     .hero .eyebrow { color: var(--blue); }
     .hero h1 { max-width: 780px; margin-bottom: 25px; }
     .hero h1 span { color: #d9b77e; }
@@ -193,9 +195,9 @@
     .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
 
     /* Existing image assets */
-    .hero-visual-wrap { margin-top: 28px; border-radius: 22px; overflow: hidden; background: #eef2f4; border: 1px solid #dfe5e8; }
-    .hero-visual { width: 100%; height: auto; max-height: 360px; object-fit: contain; object-position: center; }
-    .profile-image { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px; border: 1px solid var(--line); background: white; }
+    .hero-visual-wrap { width: 100%; aspect-ratio: 4 / 3; border-radius: 22px; overflow: hidden; background: #eef2f4; border: 1px solid #dfe5e8; }
+    .hero-visual { width: 100%; height: 100%; object-fit: cover; object-position: 100% center; }
+    .profile-image { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; object-position: center; padding: 8%; box-sizing: border-box; border-radius: 20px; border: 1px solid var(--line); background: white; }
     .profile-visual { display: flex; flex-direction: column; gap: 18px; }
     .experience-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 18px; border: 1px solid var(--line); margin-bottom: 24px; }
     .experiment-card { padding: 0; overflow: hidden; }
@@ -211,6 +213,7 @@
       .hero-grid, .intro-grid, .experience-grid, .ai-grid { grid-template-columns: 1fr; gap: 40px; }
       .theme-grid { grid-template-columns: repeat(2, 1fr); }
       .hero { padding: 85px 0 75px; }
+      .hero-side { width: 100%; }
       .hero-card { max-width: 500px; }
       .experiment-grid { grid-template-columns: 1fr; }
       .x-grid { grid-template-columns: 1fr; }
@@ -228,15 +231,9 @@
         gap: 30px;
         align-items: stretch;
       }
-      .hero-grid > div:first-child { display: contents; }
-      .hero .eyebrow { order: 1; }
-      .hero h1 { order: 2; }
-      .hero-lead { order: 3; }
-      .hero-card { order: 4; }
-      .hero .actions { order: 5; }
-      .hero-meta { order: 6; }
-      .hero-grid > div:first-child,
-      .hero-card {
+      .hero-copy { order: 1; }
+      .hero-side { order: 2; }
+      .hero-copy, .hero-side, .hero-card {
         width: 100%;
         min-width: 0;
       }
@@ -289,11 +286,10 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-grid">
-        <div>
+        <div class="hero-copy">
           <div class="eyebrow">Design × Improvement × AI</div>
           <h1><span class="hero-line">設計28年の経験から、</span><span class="hero-line"><span>考える時間</span>を取り戻す。</span></h1>
           <p class="hero-lead">設計者が「考える仕事」に集中できる環境を。設計現場で使える業務効率化・手戻り防止・設計改善・AI活用の考え方を発信しています。</p>
-          <div class="hero-visual-wrap"><img class="hero-visual" src="assets/hero-design.png" alt="設計者がCAD画面を確認する設計現場" /></div>
           <div class="hero-meta">
             <span class="pill">樹脂成形部品設計28年</span>
             <span class="pill">150部品以上</span>
@@ -304,16 +300,19 @@
             <a class="button button-outline" href="https://x.com/ichiro_Advisor" target="_blank" rel="noopener">Xを見る ↗</a>
           </div>
         </div>
-        <aside class="hero-card" aria-label="実務経験">
-          <div class="eyebrow">Practical experience</div>
-          <div class="number">28<span class="unit">年</span></div>
-          <p>樹脂成形部品設計の実務経験</p>
-          <hr>
-          <div class="number">150<span class="unit">+</span></div>
-          <p>設計してきた部品数</p>
-          <hr>
-          <p><strong>見つけるのはAI。</strong><br><strong>判断するのは設計者。</strong></p>
-        </aside>
+        <div class="hero-side">
+          <div class="hero-visual-wrap"><img class="hero-visual" src="assets/hero-design.png" alt="設計者がCAD画面を確認する設計現場" /></div>
+          <aside class="hero-card" aria-label="実務経験">
+            <div class="eyebrow">Practical experience</div>
+            <div class="number">28<span class="unit">年</span></div>
+            <p>樹脂成形部品設計の実務経験</p>
+            <hr>
+            <div class="number">150<span class="unit">+</span></div>
+            <p>設計してきた部品数</p>
+            <hr>
+            <p><strong>見つけるのはAI。</strong><br><strong>判断するのは設計者。</strong></p>
+          </aside>
+        </div>
       </div>
     </section>
 
